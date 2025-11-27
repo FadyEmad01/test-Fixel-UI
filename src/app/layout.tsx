@@ -1,12 +1,13 @@
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import '../styles/global.css';
-import { Inter, Syne } from 'next/font/google';
+import { Inter, Syne ,Geist} from 'next/font/google';
 import { Metadata } from 'next';
 
 const inter = Inter({
   subsets: ['latin'],
 });
 const syne = Syne({ subsets: ['latin'] });
+const geist = Geist({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -88,7 +89,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en"
-      className={`${inter.className} ${syne.className} antialiased `}
+      className={`${inter.className} ${syne.className} ${geist.className} antialiased `}
       suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
         <RootProvider>{children}</RootProvider>

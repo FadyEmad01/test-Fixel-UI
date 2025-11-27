@@ -243,19 +243,23 @@
     @apply md:!border-0;
   }
 
-  #nd-sidebar div div div a[href^='/docs/components'] > svg[data-icon='true'],
+  /* #nd-sidebar div div div a[href^='/docs/components'] > svg[data-icon='true'],
   #nd-sidebar div div div a[href^='/docs/primitives'] > svg[data-icon='true'],
   #nd-sidebar div div div a[href^='/docs/icons'] > svg[data-icon='true'],
   #nd-sidebar div div div a + div[data-state='open'] {
     @apply !hidden;
-  }
+  } */
 
   #nd-docs-layout {
     @apply relative 3xl:!w-full 3xl:!mx-auto 3xl:!max-w-[1670px];
   }
 
-  #nd-page article {
+  /* #nd-page article {
     @apply max-2xl:max-w-[860px] !pt-23 3xl:!mx-[64px] 2xl:!max-w-[1124px];
+  } */
+
+  #nd-page article {
+    @apply max-2xl:max-w-[860px] 3xl:!mx-[64px] 2xl:!max-w-[1124px] after:-inset-[5px] after:-z-1 relative flex min-w-0 flex-1 flex-col bg-muted/50 bg-clip-padding before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:shadow-[0_1px_2px_1px_--theme(--color-black/4%)] after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-2xl)+4px)] after:border after:border-border/50 after:bg-clip-padding max-lg:before:hidden lg:rounded-2xl lg:border dark:after:bg-background/72;
   }
 
   #nd-page {
