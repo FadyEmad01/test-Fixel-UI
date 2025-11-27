@@ -255,7 +255,7 @@
   }
 
   #nd-page article {
-    @apply max-2xl:max-w-[860px] !pt-23 3xl:!ml-[262px] 2xl:!max-w-[1124px];
+    @apply max-2xl:max-w-[860px] !pt-23 3xl:!mx-[64px] 2xl:!max-w-[1124px];
   }
 
   #nd-page {
@@ -274,9 +274,9 @@
     @apply !w-[3px] !rounded-full -ml-px;
   } */
 
-  #nd-tocnav {
+  /* #nd-tocnav {
     @apply !hidden;
-  }
+  } */
 
   #docs-body h1,
   #docs-body h2,
