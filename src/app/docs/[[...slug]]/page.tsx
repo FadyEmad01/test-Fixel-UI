@@ -27,7 +27,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   return (
     <>
       <div className='pt-10 xl:pt-0 overflow-hidden'>
-        <DocsPage article={{ className: '!p-0 border-none' }} tableOfContent={{ enabled: true, style: 'clerk' }} toc={page.data.toc} full={page.data.full} footer={{ enabled: false }}>
+        <DocsPage breadcrumb={{ enabled: false }} article={{ className: '!p-0 border-none' }} tableOfContent={{ enabled: true, style: 'clerk' }} toc={page.data.toc} full={page.data.full} footer={{ enabled: false }}>
           <div className="-m-px border bg-background px-4 py-6 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] sm:px-6 lg:rounded-t-2xl lg:rounded-b-xl lg:p-8 dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
             <div className="mx-auto w-full max-w-3xl">
               <div className="flex min-w-0 flex-1 flex-col gap-8">
