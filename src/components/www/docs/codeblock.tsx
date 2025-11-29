@@ -29,7 +29,7 @@ export const Pre = forwardRef<HTMLPreElement, HTMLAttributes<HTMLPreElement>>(
     return (
       <pre
         ref={ref}
-        className={cn('p-4 focus-visible:outline-none', className)}
+        className={cn('p-4 pe-10 focus-visible:outline-none', className)}
         {...props}
       >
         {props.children}
