@@ -2,7 +2,7 @@
 
 import { OpenInV0Button } from '@/components/www/docs/open-in-v0-button';
 import { Button } from '@/components/www/ui/button';
-import { ScrollArea, ScrollViewport } from '@/components/www/ui/scroll-area';
+import { ScrollArea, ScrollBar, ScrollViewport } from '@/components/www/ui/scroll-area';
 import { Fullscreen, RotateCcw, SlidersHorizontal } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'motion/react';
@@ -34,6 +34,58 @@ export const ComponentWrapper = ({
 
   return (
     <div className="bg-accent rounded-xl p-1.5">
+
+      <div className="absolute top-4 right-4 z-9 bg-background/5 backdrop-blur-sm flex items-center justify-end gap-2 p-1 rounded-[11px]">
+        <OpenInV0Button url={`https://test-fixel-ui.vercel.app/r/${name}.json`} />
+
+        <Button
+          onClick={() => setKey((prev) => prev + 1)}
+          className="flex items-center rounded-lg"
+          variant="secondary"
+          size="icon-lg"
+          asChild
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <RotateCcw aria-label="restart-btn" size={14} />
+          </motion.button>
+        </Button>
+
+        <Button
+          onClick={() => window.open(`/examples/iframe/${name}`, '_blank')}
+          className="flex items-center rounded-lg"
+          variant="secondary"
+          size="icon-lg"
+          asChild
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Fullscreen aria-label="fullscreen-btn" size={14} />
+          </motion.button>
+        </Button>
+
+        {tweakpane && (
+          <Button
+            onClick={() => setTweakMode((prev) => !prev)}
+            className="flex items-center rounded-lg"
+            variant="secondary"
+            size="icon-lg"
+            asChild
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <SlidersHorizontal aria-label="tweak-btn" size={14} />
+            </motion.button>
+          </Button>
+        )}
+      </div>
+
       <motion.div
         id="component-wrapper"
         className={cn(
@@ -42,10 +94,11 @@ export const ComponentWrapper = ({
           className,
         )}
       >
-        <ScrollArea className="flex-1 max-h-[400px] relative">
+        <ScrollArea className="flex-1 max-h-[400px] overflow-scroll no-scrollbar">
           <ScrollViewport className="h-full">
-            <motion.div className="relative min-h-full flex-1">
-              <div className="absolute top-2 right-2 z-10 bg-background flex items-center justify-end gap-2 p-1 rounded-[11px]">
+            <ScrollBar />
+            <div className="relative min-h-full flex-1">
+              {/* <div className="absolute top-2 right-2 z-10 bg-background flex items-center justify-end gap-2 p-1 rounded-[11px]">
                 <OpenInV0Button url={`https://test-fixel-ui.vercel.app/r/${name}.json`} />
 
                 <Button
@@ -64,36 +117,19 @@ export const ComponentWrapper = ({
                 </Button>
 
                 <Button
-                    onClick={() => window.open(`/examples/iframe/${name}`, '_blank')}
-                    className="flex items-center rounded-lg"
-                    variant="secondary"
-                    size="icon-lg"
-                    asChild
+                  onClick={() => window.open(`/examples/iframe/${name}`, '_blank')}
+                  className="flex items-center rounded-lg"
+                  variant="secondary"
+                  size="icon-lg"
+                  asChild
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Fullscreen aria-label="fullscreen-btn" size={14} />
-                    </motion.button>
-                  </Button>
-
-                {/* {(iframe || fullScreen) && (
-                  <Button
-                    onClick={() => window.open(`/examples/iframe/${name}`, '_blank')}
-                    className="flex items-center rounded-lg"
-                    variant="secondary"
-                    size="icon-lg"
-                    asChild
-                  >
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Fullscreen aria-label="fullscreen-btn" size={14} />
-                    </motion.button>
-                  </Button>
-                )} */}
+                    <Fullscreen aria-label="fullscreen-btn" size={14} />
+                  </motion.button>
+                </Button>
 
                 {tweakpane && (
                   <Button
@@ -111,9 +147,9 @@ export const ComponentWrapper = ({
                     </motion.button>
                   </Button>
                 )}
-              </div>
+              </div> */}
 
-              {iframe ? (
+              {/* {iframe ? (
                 <Iframe key={key} name={name} bigScreen={bigScreen} />
               ) : (
                 <div
@@ -122,8 +158,12 @@ export const ComponentWrapper = ({
                 >
                   {children}
                 </div>
-              )}
-            </motion.div>
+              )} */}
+              <div className='px-10 py-16'>
+                {children}
+              </div>
+
+            </div>
           </ScrollViewport>
         </ScrollArea>
 
