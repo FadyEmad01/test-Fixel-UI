@@ -18,6 +18,20 @@
         ],
         "dependencies": [],
         "registryDependencies": []
+      },
+      {
+        "name": "length",
+        "type": "registry:ui",
+        "title": "Length",
+        "description": "length",
+        "files": [
+          {
+            "path": "src/components/registry/blocks/test/length.tsx",
+            "type": "registry:ui"
+          }
+        ],
+        "dependencies": [],
+        "registryDependencies": []
       }
     ]
   }

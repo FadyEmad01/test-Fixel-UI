@@ -1,13 +1,19 @@
 ---
-title: Footer
+title: Footer 2
 description: A modern footer component with navigation sections, social links, and responsive design
 ---
 
-import { Footer } from '@/components/registry/blocks/footer/footer'
-import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
-import { CodeTabs } from '@/components/www/docs/code-tabs'
+import { Footer } from "@/components/registry/blocks/footer/footer";
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { CodeTabs } from "@/components/www/docs/code-tabs";
+import { ComponentPreview } from "@/components/www/docs/component-preview";
+import { Callout } from "fumadocs-ui/components/callout";
+
 
 ## Preview
+
+<ComponentPreview name="footer" />
 
 <div className="not-prose my-6">
   <Footer />
@@ -15,8 +21,13 @@ import { CodeTabs } from '@/components/www/docs/code-tabs'
 
 ## Installation
 
-<Tabs items={['CLI', 'Manual']}>
-  <Tab value="CLI">
+<Callout className="border-0">
+  **Note:** We use installation process as
+  [shadcn/ui](https://ui.shadcn.com/docs/installation).
+</Callout>
+
+<Tabs className="bg-transparent border-none p-0 m-0" items={['CLI', 'Manual']}>
+  <Tab className="bg-transparent p-0 m-0" value="CLI">
     Install the footer component using the CLI:
 
 <CodeTabs
@@ -28,12 +39,29 @@ import { CodeTabs } from '@/components/www/docs/code-tabs'
   }}
 />
 
+## Usage
+
+```tsx
+import { Footer } from "@/components/footer";
+
+export default function Page() {
+  return (
+    <div>
+      {/* Your page content */}
+      <Footer />
+    </div>
+  );
+}
+```
+
   </Tab>
   
-  <Tab value="Manual">
-    ### Step 1: Install dependencies
+  <Tab className="bg-transparent p-0 m-0" value="Manual">
+  <Steps>
+<Step>
+### Install dependencies
 
-    This component uses the `cn` utility for class merging. Make sure you have it set up:
+This component uses the `cn` utility for class merging. Make sure you have it set up:
 
     ```tsx title="lib/utils.ts"
     import { clsx, type ClassValue } from "clsx"
@@ -44,9 +72,12 @@ import { CodeTabs } from '@/components/www/docs/code-tabs'
     }
     ```
 
-    ### Step 2: Copy the component code
+</Step>
 
-    Create a new file at `components/footer.tsx` and paste the following code:
+<Step>
+### Copy the component code
+
+Create a new file at `components/footer.tsx` and paste the following code:
 
     ```tsx title="components/footer.tsx"
     import * as React from 'react'
@@ -224,20 +255,25 @@ import { CodeTabs } from '@/components/www/docs/code-tabs'
     }
     ```
 
-    ### Step 3: Update the imports
+</Step>
 
-    Update the import in your page/layout file:
+<Step>
+### Update the imports
+
+Update the import in your page/layout file:
 
     ```tsx
     import { Footer } from '@/components/footer'
     ```
-  </Tab>
-</Tabs>
 
+</Step>
+
+<Step>
+
+</Step>
 ## Usage
-
 ```tsx
-import { Footer } from '@/components/footer'
+import { Footer } from "@/components/footer";
 
 export default function Page() {
   return (
@@ -245,9 +281,14 @@ export default function Page() {
       {/* Your page content */}
       <Footer />
     </div>
-  )
+  );
 }
 ```
+
+</Steps>
+
+  </Tab>
+</Tabs>
 
 ## Customization
 
@@ -271,14 +312,14 @@ Customize the footer sections by modifying the `footerSections` array:
 ```tsx
 const footerSections: FooterSection[] = [
   {
-    title: 'Your Section',
+    title: "Your Section",
     links: [
-      { label: 'Link 1', href: '/link1' },
-      { label: 'Link 2', href: '/link2' },
+      { label: "Link 1", href: "/link1" },
+      { label: "Link 2", href: "/link2" },
     ],
   },
   // Add more sections as needed
-]
+];
 ```
 
 ### Add or Remove Social Links
@@ -297,9 +338,9 @@ The footer includes GitHub, Twitter, and Discord icons. You can add or remove so
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| className | string | - | Additional CSS classes to apply to the footer element |
+| Prop      | Type   | Default | Description                                           |
+| --------- | ------ | ------- | ----------------------------------------------------- |
+| className | string | -       | Additional CSS classes to apply to the footer element |
 
 ## Dependencies
 

@@ -306,3 +306,18 @@
   opacity: 0 !important;
 }
 
+.no-scrollbar {
+  /* Allow scrolling */
+  overflow: auto;
+
+  /* Hide scrollbar (Firefox) */
+  scrollbar-width: none;
+
+  /* Hide scrollbar (IE, Edge) */
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  /* Hide scrollbar (Chrome, Safari, Opera) */
+  display: none;
+}

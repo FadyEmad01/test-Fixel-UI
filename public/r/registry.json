@@ -1,23 +1,51 @@
 {
-    "$schema": "https://ui.shadcn.com/schema/registry.json",
-    "name": "fixel-ui",
-    "homepage": "https://test-fixel-ui.vercel.app",
-    "author": "Fady Emad",
-    "license": "Apache-2.0 license",
-    "items": [
-      {
-        "name": "footer",
-        "type": "registry:block",
-        "title": "Footer",
-        "description": "A modern footer component with navigation sections, social links, and responsive design",
-        "files": [
-          {
-            "path": "src/components/registry/blocks/footer/footer.tsx",
-            "type": "registry:block"
-          }
-        ],
-        "dependencies": [],
-        "registryDependencies": []
-      }
-    ]
-  }
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "fixel-ui",
+  "homepage": "https://test-fixel-ui.vercel.app",
+  "author": "Fady Emad",
+  "license": "Apache-2.0 license",
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "tw-animate-css",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {},
+      "files": []
+    },
+    {
+      "name": "footer",
+      "type": "registry:block",
+      "title": "Footer",
+      "description": "A modern footer component with navigation sections, social links, and responsive design",
+      "files": [
+        {
+          "path": "src/components/registry/blocks/footer/footer.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "length",
+      "type": "registry:ui",
+      "title": "Length",
+      "description": "length",
+      "files": [
+        {
+          "path": "src/components/registry/blocks/test/length.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    }
+  ]
+}
