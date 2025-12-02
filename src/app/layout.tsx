@@ -1,7 +1,8 @@
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import '../styles/global.css';
-import { Inter, Syne ,Geist} from 'next/font/google';
+import { Inter, Syne, Geist } from 'next/font/google';
 import { Metadata } from 'next';
+import ScreenshotMode from '@/components/www/layout/screenshot-mode';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -92,7 +93,9 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       className={`${inter.className} ${syne.className} ${geist.className} antialiased `}
       suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+
+        <ScreenshotMode />
+        <RootProvider theme={{ enableSystem: true }}>{children}</RootProvider>
       </body>
     </html>
   );

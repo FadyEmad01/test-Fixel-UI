@@ -240,7 +240,7 @@
   }
 
   #nd-sidebar {
-    @apply md:!border-0;
+    @apply md: !border-0;
   }
 
   /* #nd-sidebar div div div a[href^='/docs/components'] > svg[data-icon='true'],
@@ -251,7 +251,7 @@
   } */
 
   #nd-docs-layout {
-    @apply relative 3xl:!w-full 3xl:!mx-auto 3xl:!max-w-[1670px];
+    @apply relative 3xl: !w-full 3xl: !mx-auto 3xl: !max-w-[1670px];
   }
 
   /* #nd-page article {
@@ -259,11 +259,11 @@
   } */
 
   #nd-page article {
-    @apply max-2xl:max-w-[860px] 3xl:!mx-[64px] 2xl:!max-w-[1124px] after:-inset-[5px] after:-z-1 relative flex min-w-0 flex-1 flex-col bg-muted/50 bg-clip-padding before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:shadow-[0_1px_2px_1px_--theme(--color-black/4%)] after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-2xl)+4px)] after:border after:border-border/50 after:bg-clip-padding max-lg:before:hidden lg:rounded-2xl lg:border dark:after:bg-background/72;
+    @apply max-2xl:max-w-[860px] 3xl: !mx-[64px] 2xl: !max-w-[1124px] after:-inset-[5px] after:-z-1 relative flex min-w-0 flex-1 flex-col bg-muted/50 bg-clip-padding before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:shadow-[0_1px_2px_1px_--theme(--color-black/4%)] after:pointer-events-none after:absolute after:rounded-[calc(var(--radius-2xl)+4px)] after:border after:border-border/50 after:bg-clip-padding max-lg:before:hidden lg:rounded-2xl lg:border dark:after:bg-background/72;
   }
 
   #nd-page {
-    @apply !pt-0 2xl:!max-w-none;
+    @apply !pt-0 2xl: !max-w-none;
   }
 
   #nd-toc {
@@ -300,10 +300,21 @@
 
 .screenshot-mode #nd-sidebar,
 .screenshot-mode #nd-toc,
-.screenshot-mode #nd-page article > *:not(#docs-body),
-.screenshot-mode #nd-page #docs-body > *:not(#component-preview),
+.screenshot-mode #nd-page article>*:not(#docs-body),
+.screenshot-mode #nd-page #docs-body>*:not(#component-preview),
 .screenshot-mode #component-preview-tab-list {
   opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.screenshot-mode::after {
+  content: "Fixel UI — © 2025";
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 18px;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 .no-scrollbar {
@@ -321,3 +332,9 @@
   /* Hide scrollbar (Chrome, Safari, Opera) */
   display: none;
 }
+
+/* #radix-_R_alb_{
+  --tw-backdrop-blur: blur(var(--blur-2xl));
+  -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+  backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+} */
